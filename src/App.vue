@@ -1,8 +1,13 @@
 <script>
+import AppMovieCard from "./components/AppMovieCard.vue"
 import axios from 'axios';
 import { store } from "./store.js"
 
 export default {
+  components: {
+    AppMovieCard,
+
+  },
   data() {
     return {
       store,
@@ -25,6 +30,7 @@ export default {
         .request(options)
         .then(function (response) {
           console.log(response.data.results);
+          store.moviesList = response.data.results;
         })
         .catch(function (error) {
           console.error(error);
@@ -37,7 +43,9 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+  <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
+</template>
 
 <style scoped></style>
 
