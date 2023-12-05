@@ -1,13 +1,13 @@
 <script>
-import AppMovieCard from "./components/AppMovieCard.vue"
-import AppSearch from "./components/AppSearch.vue"
+import AppMovieCard from "./components/AppMovieCard.vue";
+import AppSearchMovie from "./components/AppSearchMovie.vue";
 import axios from 'axios';
-import { store } from "./store.js"
+import { store } from "./store.js";
 
 export default {
   components: {
     AppMovieCard,
-    AppSearch,
+    AppSearchMovie
 
   },
   data() {
@@ -47,6 +47,7 @@ export default {
 
 <template>
   <main>
+    <AppSearchMovie />
     <section class="container">
       <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
     </section>
