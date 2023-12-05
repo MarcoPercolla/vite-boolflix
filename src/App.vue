@@ -1,11 +1,13 @@
 <script>
 import AppMovieCard from "./components/AppMovieCard.vue"
+import AppSearch from "./components/AppSearch.vue"
 import axios from 'axios';
 import { store } from "./store.js"
 
 export default {
   components: {
     AppMovieCard,
+    AppSearch,
 
   },
   data() {
