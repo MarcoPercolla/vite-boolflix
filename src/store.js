@@ -3,5 +3,6 @@ export const store = reactive({
     moviesList: [],
     seriesList: [],
     searchString: "",
+    currentLng: "",
 
 });

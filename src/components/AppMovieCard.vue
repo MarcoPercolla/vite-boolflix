@@ -19,10 +19,9 @@ export default {
 
 <style scoped>
 .card {
-    width: 22%;
-    height: 100%;
-    background-color: grey;
+    width: 23%;
     margin: 0.5rem;
-    border-radius: 0.3rem;
+    background-color: blue;
+
 }
 </style>

@@ -134,13 +134,12 @@ export default {
 <style scoped>
 .container {
   width: 80%;
+  margin: 0 auto;
   display: flex;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  align-items: center;
-  justify-content: space-between;
-  margin: 2rem auto;
-  height: 40vh;
+  flex-wrap: wrap;
+
+
+  justify-content: space-evenly;
 }
 </style>
 
