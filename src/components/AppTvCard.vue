@@ -9,6 +9,7 @@ export default {
 
 <template>
     <div class="card2">
+        <img class="poster" :src="`http://image.tmdb.org/t/p/w500${serie.poster_path}`" alt="">
         <h1>{{ serie.name }}</h1>
         <h5>{{ serie.original_language }}</h5>
         <img :src="`../../img/${serie.original_language}.svg`" alt="">
@@ -31,5 +32,9 @@ export default {
 img {
     width: 10%;
 
+}
+
+.poster {
+    width: 100%
 }
 </style>
