@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .card {
     width: 22%;
-    min-height: 20rem;
+    height: 100%;
     background-color: grey;
     margin: 0.5rem;
     border-radius: 0.3rem;

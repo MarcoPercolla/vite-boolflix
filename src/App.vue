@@ -1,13 +1,16 @@
 <script>
 import AppMovieCard from "./components/AppMovieCard.vue";
+import AppTvCard from "./components/AppTvCard.vue";
 import AppSearchMovie from "./components/AppSearchMovie.vue";
 import axios from 'axios';
 import { store } from "./store.js";
 
 export default {
   components: {
+    AppTvCard,
     AppMovieCard,
-    AppSearchMovie
+    AppSearchMovie,
+
 
   },
   data() {
@@ -41,6 +44,28 @@ export default {
           });
 
 
+
+        const optionsTv = {
+          method: 'GET',
+          url: 'https://api.themoviedb.org/3/search/tv',
+          params: { query: `${this.store.searchString}`, include_adult: 'false', language: 'en-US', page: '1' },
+          headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
+          }
+        };
+
+        axios
+          .request(optionsTv)
+          .then(function (response) {
+            console.log(response.data.results);
+            store.seriesList = response.data.results;
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+
+
       } else {
         const options = {
           method: 'GET',
@@ -63,6 +88,27 @@ export default {
             console.error(error);
           });
 
+        const optionsTv = {
+          method: 'GET',
+          url: 'https://api.themoviedb.org/3/search/tv',
+          params: { query: `transformers`, include_adult: 'false', language: 'en-US', page: '1' },
+          headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
+          }
+        };
+
+        axios
+          .request(optionsTv)
+          .then(function (response) {
+            console.log(response.data.results);
+            store.seriesList = response.data.results;
+
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+
       }
 
     }
@@ -79,6 +125,9 @@ export default {
     <section class="container">
       <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
     </section>
+    <section class="container">
+      <AppTvCard v-for="series in store.seriesList" :serie="series" />
+    </section>
   </main>
 </template>
 
@@ -86,10 +135,12 @@ export default {
 .container {
   width: 80%;
   display: flex;
-  flex-wrap: wrap;
+  overflow-y: auto;
+  scroll-behavior: smooth;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 2rem auto;
+  height: 40vh;
 }
 </style>
 
