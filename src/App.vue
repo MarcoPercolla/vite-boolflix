@@ -134,7 +134,7 @@ export default {
 <style scoped>
 .container {
   width: 80%;
-  height: 40vh;
+  height: 60vh;
   margin: 2rem auto;
   display: flex;
   flex-wrap: nowrap;
