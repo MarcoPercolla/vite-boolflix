@@ -44,10 +44,23 @@ export default {
 </script>
 
 <template>
-  <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
+  <main>
+    <section class="container">
+      <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
+    </section>
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+</style>
 
 
 
