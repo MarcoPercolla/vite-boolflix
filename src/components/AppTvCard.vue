@@ -21,8 +21,11 @@ export default {
 <style scoped>
 .card2 {
     width: 23%;
+    height: 90%;
     margin: 0.5rem;
     background-color: red;
+    flex-shrink: 0;
+    overflow-y: auto;
 }
 
 img {

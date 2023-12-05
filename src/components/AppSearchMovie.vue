@@ -4,7 +4,7 @@ import { store } from "../store.js"
 
 export default {
     name: "AppSearchMovie",
-    emits: ["searchFilm"],
+    emits: ["searchfilm"],
     data() {
         return {
             store
@@ -12,7 +12,7 @@ export default {
     },
     methods: {
         getInput() {
-            this.$emit("searchFilm");
+            this.$emit("searchfilm");
         },
 
     }

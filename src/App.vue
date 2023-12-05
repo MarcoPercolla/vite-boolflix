@@ -121,7 +121,7 @@ export default {
 
 <template>
   <main>
-    <AppSearchMovie @searchFilm="getMovies" />
+    <AppSearchMovie @searchfilm="getMovies" />
     <section class="container">
       <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
     </section>
@@ -134,12 +134,12 @@ export default {
 <style scoped>
 .container {
   width: 80%;
-  margin: 0 auto;
+  height: 40vh;
+  margin: 2rem auto;
   display: flex;
-  flex-wrap: wrap;
-
-
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow: auto;
 }
 </style>
 
