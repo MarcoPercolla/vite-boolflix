@@ -140,7 +140,7 @@ export default {
 .container {
   width: 80%;
   height: 50vh;
-  margin: 2rem auto;
+  margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -148,6 +148,11 @@ export default {
   overflow: auto;
 
 
+}
+
+h2 {
+  margin: 2rem 2rem 0.5rem 11%;
+  color: white;
 }
 </style>
 

@@ -19,13 +19,21 @@ export default {
 }
 </script>
 <template>
-    <input type="text" placeholder="cerca..." v-model="store.searchString" @keyup="getInput">
-    <select name="lng" id="lng" v-model="store.currentLng">
-        <option value="all">all</option>
-        <option value="en">En</option>
-        <option value="it">it</option>
-        <option value="ch">ch</option>
-        <option value="sp">sp</option>
-    </select>
+    <header>
+        <img id="logo" src="https://m.media-amazon.com/images/I/31JfJ6dXD9L.png" alt="">
+        <input type="text" placeholder="cerca..." v-model="store.searchString" @keyup="getInput">
+    </header>
 </template>
-<style scoped></style>
+<style scoped>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: black;
+}
+
+#logo {
+    height: 4rem;
+}
+</style>

@@ -3,6 +3,6 @@ export const store = reactive({
     moviesList: [],
     seriesList: [],
     searchString: "",
-    currentLng: "",
+    lingue: ["cn", "it", "ja", "en"],
 
 });

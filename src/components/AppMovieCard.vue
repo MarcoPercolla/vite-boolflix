@@ -1,9 +1,11 @@
 <script>
+import { store } from "../store.js";
 export default {
     name: "AppMovieCard",
     data() {
         return {
             active: true,
+            store
         }
     },
     props: {
@@ -16,12 +18,14 @@ export default {
 <template>
     <div class="card" @mouseenter="active = false" @mouseleave="active = true">
         <div class="cardFront">
-            <img class="poster" :src="`http://image.tmdb.org/t/p/w500${film.poster_path}`" alt="">
+            <img v-if="film.poster_path" class="poster" :src="`http://image.tmdb.org/t/p/w500${film.poster_path}`" alt="">
+            <img v-else class="poster" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="">
 
         </div>
         <div class="cardBack" v-if="!active">
             <h1>{{ film.title }}</h1>
-            <h5>Lingua:</h5><span>{{ film.original_language }}</span>
+            <h5>Lingua:</h5>
+            <span v-if="!this.store.lingue.includes(film.original_language)">{{ film.original_language }}</span>
             <img class="flag" :src="`../../img/${film.original_language}.svg`" alt="">
             <h3>Titolo originale:</h3><span>{{ film.original_title }}</span>
             <h3>Voto:</h3><span>{{ film.vote_average }}</span>
@@ -55,6 +59,7 @@ h1 {
 
 .cardBack {
     background-color: rgba(255, 0, 0, 0.79);
+    padding: 0.3rem;
     position: absolute;
     border-radius: 1rem;
     height: 100%;

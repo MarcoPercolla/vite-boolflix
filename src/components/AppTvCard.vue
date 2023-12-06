@@ -1,6 +1,12 @@
 <script>
+import { store } from "../store.js";
 export default {
     name: "AppTvCard",
+    data() {
+        return {
+            store
+        }
+    },
     props: {
         serie: "",
     }
@@ -10,11 +16,14 @@ export default {
 <template>
     <div class="card">
         <div class="cardFront">
-            <img class="poster" :src="`http://image.tmdb.org/t/p/w500${serie.poster_path}`" alt="">
+            <img v-if="serie.poster_path" class="poster" :src="`http://image.tmdb.org/t/p/w500${serie.poster_path}`" alt="">
+            <img v-else class="poster" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="">
+
         </div>
         <div class="cardBack">
             <h1>{{ serie.name }}</h1>
-            <h5>Lingua:</h5><span>{{ serie.original_language }}</span>
+            <h5>Lingua:</h5>
+            <span v-if="!this.store.lingue.includes(serie.original_language)">{{ serie.original_language }}</span>
             <img class="flag" :src="`../../img/${serie.original_language}.svg`" alt="">
             <h3>Titolo originale:</h3><span>{{ serie.original_name }}</span>
             <h3>Voto:{{ serie.popularity }}</h3>
@@ -47,6 +56,7 @@ h1 {
 }
 
 .cardBack {
+    padding: 0.3rem;
     background-color: rgba(255, 0, 0, 0.79);
     position: absolute;
     border-radius: 1rem;
