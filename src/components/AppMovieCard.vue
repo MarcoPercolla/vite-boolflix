@@ -15,7 +15,7 @@ export default {
 
 <template>
     <div class="card" @mouseenter="active = false" @mouseleave="active = true">
-        <div class="cardFront" v-if="active">
+        <div class="cardFront">
             <img class="poster" :src="`http://image.tmdb.org/t/p/w500${film.poster_path}`" alt="">
 
         </div>
@@ -53,7 +53,7 @@ h1 {
 }
 
 .cardBack {
-    background-color: blue;
+    background-color: rgba(255, 0, 0, 0.79);
     position: absolute;
     border-radius: 1rem;
     height: 100%;

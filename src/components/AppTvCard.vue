@@ -24,7 +24,7 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
     width: 18rem;
     height: 50vh;
@@ -46,13 +46,19 @@ h1 {
 }
 
 .cardBack {
-    background-color: blue;
+    background-color: rgba(255, 0, 0, 0.79);
     position: absolute;
     border-radius: 1rem;
     height: 100%;
     width: 100%;
     top: 0;
-    display: none;
+    opacity: 0;
+
+    &:hover {
+        transition: 1s;
+        opacity: 1;
+    }
+
 
 }
 
@@ -66,5 +72,7 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
+
+
 }
 </style>
