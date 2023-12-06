@@ -122,9 +122,11 @@ export default {
 <template>
   <main>
     <AppSearchMovie @searchfilm="getMovies" />
+    <h2>Movies:</h2>
     <section class="container">
       <AppMovieCard v-for="movie in store.moviesList" :film="movie" />
     </section>
+    <h2>Series:</h2>
     <section class="container">
       <AppTvCard v-for="series in store.seriesList" :serie="series" />
     </section>

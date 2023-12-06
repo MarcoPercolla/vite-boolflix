@@ -1,20 +1,26 @@
 <script>
 export default {
     name: "AppMovieCard",
+    data() {
+        return {
+            active: true,
+        }
+    },
     props: {
         film: "",
     }
+
 }
 </script>
 
 <template>
-    <div class="card">
-        <div class="cardFront">
+    <div class="card" @mouseenter="active = false" @mouseleave="active = true">
+        <div class="cardFront" v-if="active">
             <img class="poster" :src="`http://image.tmdb.org/t/p/w500${film.poster_path}`" alt="">
-            <h1>{{ film.title }}</h1>
-        </div>
-        <div class="cardBack">
 
+        </div>
+        <div class="cardBack" v-if="!active">
+            <h1>{{ film.title }}</h1>
             <h5>{{ film.original_language }}</h5>
             <img class="flag" :src="`../../img/${film.original_language}.svg`" alt="">
             <h3>{{ film.original_title }}</h3>
@@ -37,17 +43,12 @@ export default {
 
 .cardFront {
     height: 100%;
-    position: relative;
+
 
 }
 
 h1 {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(240, 248, 255, 0.28);
-    width: 100%;
-    border-radius: 0 0 1rem 1rem;
-    padding-bottom: 0.2rem;
+    padding: 0.4rem;
 
 }
 
@@ -58,7 +59,8 @@ h1 {
     height: 100%;
     width: 100%;
     top: 0;
-    display: none;
+
+
 
 }
 

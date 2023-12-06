@@ -11,9 +11,9 @@ export default {
     <div class="card">
         <div class="cardFront">
             <img class="poster" :src="`http://image.tmdb.org/t/p/w500${serie.poster_path}`" alt="">
-            <h1>{{ serie.name }}</h1>
         </div>
         <div class="cardBack">
+            <h1>{{ serie.name }}</h1>
             <h5>{{ serie.original_language }}</h5>
             <img class="flag" :src="`../../img/${serie.original_language}.svg`" alt="">
             <h3>{{ serie.original_name }}</h3>
@@ -37,18 +37,12 @@ export default {
 
 .cardFront {
     height: 100%;
-    position: relative;
+
 
 }
 
 h1 {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(240, 248, 255, 0.28);
-    width: 100%;
-    border-radius: 0 0 1rem 1rem;
-    padding-bottom: 0.2rem;
-
+    padding: 0.4rem;
 }
 
 .cardBack {
