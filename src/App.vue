@@ -70,7 +70,7 @@ export default {
         const options = {
           method: 'GET',
           url: 'https://api.themoviedb.org/3/search/movie',
-          params: { query: `transformers`, include_adult: 'false', language: 'en-US', page: '1', api_key: "dfb6f86f52ee328183147082281a1543" },
+          params: { query: `lord of`, include_adult: 'false', language: 'en-US', page: '1', api_key: "dfb6f86f52ee328183147082281a1543" },
           headers: {
             accept: 'application/json',
             // Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
@@ -91,7 +91,7 @@ export default {
         const optionsTv = {
           method: 'GET',
           url: 'https://api.themoviedb.org/3/search/tv',
-          params: { query: `transformers`, include_adult: 'false', language: 'en-US', page: '1', api_key: "dfb6f86f52ee328183147082281a1543" },
+          params: { query: `lord of`, include_adult: 'false', language: 'en-US', page: '1', api_key: "dfb6f86f52ee328183147082281a1543" },
           headers: {
             accept: 'application/json',
             // Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
@@ -134,12 +134,15 @@ export default {
 <style scoped>
 .container {
   width: 80%;
-  height: 60vh;
+  height: 50vh;
   margin: 2rem auto;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   overflow: auto;
+
+
 }
 </style>
 
