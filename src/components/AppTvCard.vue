@@ -14,10 +14,11 @@ export default {
         </div>
         <div class="cardBack">
             <h1>{{ serie.name }}</h1>
-            <h5>{{ serie.original_language }}</h5>
+            <h5>Lingua:</h5><span>{{ serie.original_language }}</span>
             <img class="flag" :src="`../../img/${serie.original_language}.svg`" alt="">
-            <h3>{{ serie.original_name }}</h3>
-            <p>{{ serie.popularity }}</p>
+            <h3>Titolo originale:</h3><span>{{ serie.original_name }}</span>
+            <h3>Voto:{{ serie.popularity }}</h3>
+            <h3>Overview:</h3><span>{{ serie.overview }}</span>
 
         </div>
 
@@ -52,6 +53,7 @@ h1 {
     height: 100%;
     width: 100%;
     top: 0;
+    overflow: auto;
     opacity: 0;
 
     &:hover {
@@ -63,8 +65,8 @@ h1 {
 }
 
 .flag {
-    width: 10%;
-    margin: 0.5rem 42.5%;
+    width: 30%;
+    margin: 0.5rem 35%;
 
 }
 
