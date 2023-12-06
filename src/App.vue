@@ -133,6 +133,9 @@ export default {
   </main>
 </template>
 
+<style lang="scss">
+@use './styles/general.scss'
+</style>
 <style scoped>
 .container {
   width: 80%;
