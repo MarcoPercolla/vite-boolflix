@@ -28,7 +28,10 @@ export default {
             <span v-if="!this.store.lingue.includes(film.original_language)">{{ film.original_language }}</span>
             <img class="flag" :src="`../../img/${film.original_language}.svg`" alt="">
             <h3>Titolo originale:</h3><span>{{ film.original_title }}</span>
-            <h3>Voto: </h3><span v-for="n in Math.ceil(0.1 + film.vote_average / 2)">-star-</span>
+            <h3>Voto: </h3>
+            <span v-for="n in Math.ceil(0.1 + film.vote_average / 2)">
+                <font-awesome-icon class="yellow" icon="fa-solid fa-star" />
+            </span>
             <h3>Overview:</h3><span>{{ film.overview }}</span>
         </div>
 
@@ -56,6 +59,11 @@ h1 {
     padding: 0.4rem;
 
 }
+
+.yellow {
+    color: yellow;
+}
+
 
 .cardBack {
     background-color: rgba(255, 0, 0, 0.79);
