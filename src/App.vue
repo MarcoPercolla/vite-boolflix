@@ -150,6 +150,10 @@ export default {
 
 }
 
+main {
+  padding-bottom: 5rem;
+}
+
 h2 {
   margin: 2rem 2rem 0.5rem 11%;
   color: white;

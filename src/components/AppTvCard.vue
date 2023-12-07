@@ -26,7 +26,7 @@ export default {
             <span v-if="!this.store.lingue.includes(serie.original_language)">{{ serie.original_language }}</span>
             <img class="flag" :src="`../../img/${serie.original_language}.svg`" alt="">
             <h3>Titolo originale:</h3><span>{{ serie.original_name }}</span>
-            <h3>Voto:{{ serie.popularity }}</h3>
+            <h3>Voto: </h3><span v-for="n in Math.ceil(0.1 + serie.vote_average / 2)">-star-</span>
             <h3>Overview:</h3><span>{{ serie.overview }}</span>
 
         </div>
