@@ -56,6 +56,11 @@ export default {
 
 h1 {
     padding: 0.4rem;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 0.5rem;
 }
 
 .cardBack {
@@ -76,6 +81,8 @@ h1 {
 
 
 }
+
+
 
 .yellow {
     color: yellow;

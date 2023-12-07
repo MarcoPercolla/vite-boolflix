@@ -49,16 +49,21 @@ export default {
     position: relative;
 }
 
+h1 {
+    text-align: center;
+    padding: 0.4rem;
+}
+
+h3 {
+    margin-top: 0.5rem;
+}
+
 .cardFront {
     height: 100%;
 
 
 }
 
-h1 {
-    padding: 0.4rem;
-
-}
 
 .yellow {
     color: yellow;
