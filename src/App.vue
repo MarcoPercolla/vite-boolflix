@@ -58,7 +58,7 @@ export default {
         axios
           .request(optionsTv)
           .then(function (response) {
-            console.log(response.data.results);
+            console.log(response.data);
             store.seriesList = response.data.results;
           })
           .catch(function (error) {
@@ -81,7 +81,7 @@ export default {
         axios
           .request(options)
           .then(function (response) {
-            console.log(response.data.results);
+            console.log(response.data);
             store.moviesList = response.data.results;
           })
           .catch(function (error) {
@@ -101,7 +101,7 @@ export default {
         axios
           .request(optionsTv)
           .then(function (response) {
-            console.log(response.data.results);
+            console.log(response.data);
             store.seriesList = response.data.results;
 
           })
@@ -139,6 +139,7 @@ export default {
 </style>
 <style scoped>
 .container {
+
   width: 80%;
   height: 50vh;
   margin: 0 auto;
@@ -147,7 +148,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   overflow: auto;
-
 
 }
 
