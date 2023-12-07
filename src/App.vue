@@ -141,7 +141,7 @@ export default {
 .container {
 
   width: 80%;
-  height: 50vh;
+  height: 51vh;
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
