@@ -12,31 +12,6 @@ export default {
     },
     methods: {
         getCast() {
-            // https://api.themoviedb.org/3/movie/{movie_id}/credits link per cast?
-            // let movieid = this.film.id;
-            // const options3 = {
-            //     method: 'GET',
-            //     url: `'https://api.themoviedb.org/3/movie/${movieid}/credits'`,
-            //     params: { language: 'en-US', api_key: "dfb6f86f52ee328183147082281a1543" },
-            //     headers: {
-            //         accept: 'application/json',
-
-
-            //         // Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
-            //     },
-
-            // };
-
-            // axios
-            //     .request(options3)
-            //     .then(function (response) {
-            //         console.log(response);
-            //         store.castList = response.cast;
-
-            //     })
-            //     .catch(function (error) {
-            //         console.error(error);
-            //     });
 
 
             let movieid = this.film.id
@@ -44,10 +19,10 @@ export default {
             const options3 = {
                 method: 'GET',
                 url: `https://api.themoviedb.org/3/movie/${movieid}/credits`,
-                params: { language: 'en-US' },
+                params: { language: 'en-US', api_key: "dfb6f86f52ee328183147082281a1543" },
                 headers: {
                     accept: 'application/json',
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
+                    // Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmI2Zjg2ZjUyZWUzMjgxODMxNDcwODIyODFhMTU0MyIsInN1YiI6IjY1NmRmMGEzMDg1OWI0MDBhZDM5ZjhjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xe2Vb9urprdUXsWvCYsJcD5yKZmcaCCZ5LUIhgb5qyc'
                 }
             };
 
@@ -73,7 +48,7 @@ export default {
 </script>
 
 <template>
-    <div class="card" @mouseenter="active = false" @mouseleave="active = true">
+    <div class="card" @mouseenter="active = false" @mouseleave="active = true, castToggle = false, store.castList = []">
         <div class="cardFront">
             <img v-if="film.poster_path" class="poster" :src="`http://image.tmdb.org/t/p/w500${film.poster_path}`" alt="">
             <img v-else class="poster" src="https://media.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="">
