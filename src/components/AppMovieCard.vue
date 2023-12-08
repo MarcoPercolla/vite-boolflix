@@ -100,7 +100,7 @@ h3 {
     height: 2rem;
     border-radius: 0.4rem;
     margin: 1rem auto;
-    background-color: rgb(1, 46, 89);
+    background-color: rgba(0, 0, 0, 0.704);
     text-align: center;
     line-height: 2rem;
     color: white;
@@ -113,7 +113,7 @@ h3 {
 }
 
 .castList {
-    background-color: rgba(0, 52, 91, 0.954);
+    background-color: rgba(0, 0, 0, 0.704);
     width: 90%;
     margin: 0.2rem auto;
     padding: 0.5rem;
